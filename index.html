@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juboraz Afnan Mehmud — Portfolio</title>
+<meta name="description" content="Portfolio of Juboraz Afnan Mehmud — CSE undergraduate, mobile app developer, and AI enthusiast at United International University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F7FA;
+    --surface:#FFFFFF;
+    --ink:#10151F;
+    --muted:#5B6472;
+    --line:#E3E6EC;
+    --accent:#0B5FFF;
+    --accent-ink:#04306B;
+    --mint:#00B58A;
+    --mint-soft:#E3F8F1;
+    --accent-soft:#E7EFFF;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; margin:0; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px;}
+
+  /* status bar */
+  .statusbar{
+    background:var(--ink);
+    color:#fff;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    padding:9px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    letter-spacing:0.02em;
+  }
+  .statusbar .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--mint); margin-right:8px; box-shadow:0 0 0 3px rgba(0,181,138,0.25);}
+  .statusbar .right{display:flex; gap:14px; opacity:0.75;}
+
+  /* nav */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(246,247,250,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .inner{
+    max-width:880px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  nav .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px;}
+  nav .brand span{color:var(--accent);}
+  nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+  nav a{text-decoration:none; font-size:14px; color:var(--muted); font-weight:500; transition:color .15s;}
+  nav a:hover{color:var(--ink);}
+  .navToggle{display:none; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink);}
+
+  /* hero */
+  header.hero{padding:64px 0 40px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent-ink);
+    background:var(--accent-soft); border:1px solid #CFE0FF;
+    padding:5px 12px; border-radius:100px; margin-bottom:20px;
+  }
+  h1.name{font-size:44px; font-weight:700; line-height:1.08;}
+  .tagline{font-size:18px; color:var(--muted); margin-top:10px; max-width:520px;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    border:1px solid var(--line); background:var(--surface);
+    padding:8px 14px; border-radius:100px; font-size:13px; text-decoration:none;
+    font-weight:500; transition:border-color .15s, transform .15s;
+  }
+  .chip:hover{border-color:var(--accent); transform:translateY(-1px);}
+
+  /* app-icon grid decoration in hero */
+  .icon-strip{display:flex; gap:10px; margin-top:34px;}
+  .app-icon{
+    width:46px; height:46px; border-radius:13px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; color:#fff; font-size:15px;
+    box-shadow:0 6px 14px -6px rgba(11,95,255,0.4);
+  }
+
+  section{padding:46px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:22px;}
+  .section-head .num{font-family:'JetBrains Mono',monospace; color:var(--accent); font-size:13px;}
+  .section-head h2{font-size:24px;}
+
+  p.lead{color:var(--muted); font-size:15.5px; max-width:640px;}
+
+  /* education */
+  .edu-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 24px; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;
+  }
+  .edu-card h3{font-size:17px;}
+  .edu-card .school-meta{color:var(--muted); font-size:14px; margin-top:4px;}
+  .badge{
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent-ink);
+    background:var(--accent-soft); padding:6px 12px; border-radius:8px; white-space:nowrap;
+  }
+
+  /* project grid */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; display:flex; flex-direction:column; gap:10px;
+    transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 14px 26px -18px rgba(16,21,31,0.35); border-color:#D6DEEB;}
+  .card-top{display:flex; align-items:center; gap:12px;}
+  .card-icon{
+    width:42px; height:42px; min-width:42px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; color:#fff; font-size:16px;
+  }
+  .card h3{font-size:15.5px;}
+  .card .repo{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted); word-break:break-all;}
+  .card p{font-size:13.8px; color:var(--muted); margin:0; flex-grow:1;}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;}
+  .tag{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink);
+    background:var(--mint-soft); border:1px solid #C3EDE0; padding:3px 9px; border-radius:6px;
+  }
+  .card a.repo-link{font-size:12.5px; font-weight:600; color:var(--accent); text-decoration:none; margin-top:2px;}
+  .card a.repo-link:hover{text-decoration:underline;}
+
+  /* skills */
+  .skill-group{margin-bottom:16px;}
+  .skill-group .label{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); margin-bottom:10px; text-transform:uppercase; letter-spacing:.04em;}
+  .skill-pills{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    border:1px solid var(--line); background:var(--surface); border-radius:9px;
+    padding:7px 13px; font-size:13.5px; font-weight:500;
+  }
+
+  /* achievements */
+  .ach{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 0; border-bottom:1px dashed var(--line); gap:12px;
+  }
+  .ach:last-child{border-bottom:none;}
+  .ach .t{font-size:14.5px;}
+  .ach .y{font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted); white-space:nowrap;}
+
+  footer{padding:44px 0 60px; text-align:center;}
+  footer .cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--ink); color:#fff; text-decoration:none;
+    padding:13px 24px; border-radius:100px; font-weight:600; font-size:14.5px;
+    transition:transform .15s;
+  }
+  footer .cta:hover{transform:translateY(-2px);}
+  footer .fine{color:var(--muted); font-size:12.5px; margin-top:18px; font-family:'JetBrains Mono',monospace;}
+
+  @media(max-width:640px){
+    .grid{grid-template-columns:1fr;}
+    nav ul{
+      position:fixed; top:52px; left:0; right:0; background:var(--surface);
+      flex-direction:column; padding:18px 24px; border-bottom:1px solid var(--line);
+      display:none; gap:14px;
+    }
+    nav ul.open{display:flex;}
+    .navToggle{display:block;}
+    h1.name{font-size:33px;}
+    .icon-strip{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="statusbar">
+    <span><span class="dot"></span>afnan.dev — status: open to opportunities</span>
+    <span class="right"><span>Dhaka, BD</span><span id="clock">--:--</span></span>
+  </div>
+
+  <nav>
+    <div class="inner">
+      <div class="brand">JA<span>.</span>M</div>
+      <button class="navToggle" id="navToggle">&#9776;</button>
+      <ul id="navList">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero" id="about">
+      <div class="eyebrow">&#9679; CSE Undergraduate · UIU, Dhaka</div>
+      <h1 class="name">Juboraz Afnan Mehmud</h1>
+      <p class="tagline">I build mobile apps and small games, and I'm chasing UIU's Mars Rover software subteam next. Currently deep in Flutter, and slowly falling for embedded systems.</p>
+
+      <div class="contact-row">
+        <a class="chip" href="mailto:afnananikjubo@gmail.com">&#9993; afnananikjubo@gmail.com</a>
+        <a class="chip" href="https://github.com/AfnanAnikk" target="_blank" rel="noopener">&#8942; GitHub</a>
+        <a class="chip" href="https://linkedin.com/in/juboraz-afnan-mehmud-a4a922237" target="_blank" rel="noopener">in LinkedIn</a>
+        <a class="chip" href="#" id="cvLink">&#8595; Download CV</a>
+      </div>
+
+      <div class="icon-strip" aria-hidden="true">
+        <div class="app-icon" style="background:linear-gradient(135deg,#0B5FFF,#3B82F6);">PT</div>
+        <div class="app-icon" style="background:linear-gradient(135deg,#00B58A,#34D3A6);">GC</div>
+        <div class="app-icon" style="background:linear-gradient(135deg,#F59E0B,#FBBF24);">BS</div>
+        <div class="app-icon" style="background:linear-gradient(135deg,#7C5CFF,#A78BFA);">UX</div>
+        <div class="app-icon" style="background:linear-gradient(135deg,#EF4444,#FB7185);">LC</div>
+        <div class="app-icon" style="background:linear-gradient(135deg,#0EA5E9,#38BDF8);">LM</div>
+      </div>
+    </header>
+
+    <section>
+      <p class="lead">I'm a Computer Science & Engineering student at United International University with a soft spot for building things people actually tap on — mobile apps, small games, the occasional Figma prototype. Outside of coursework, I spend most of my time in Flutter and Dart, and I'm branching into AI/ML and embedded systems as I set my sights on robotics.</p>
+    </section>
+
+    <section id="education">
+      <div class="section-head"><span class="num">01</span><h2>Education</h2></div>
+      <div class="edu-card">
+        <div>
+          <h3>B.Sc. in Computer Science and Engineering</h3>
+          <div class="school-meta">United International University (UIU), Dhaka, Bangladesh</div>
+        </div>
+        <div class="badge">Expected Graduation: 2027</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head"><span class="num">02</span><h2>Projects</h2></div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-icon" style="background:linear-gradient(135deg,#0B5FFF,#3B82F6);">PT</div>
+            <h3>PetTown</h3>
+          </div>
+          <p>An all-in-one mobile platform for pet owners to connect, share moments, discover pet-friendly services, and build community.</p>
+          <div class="tags"><span class="tag">Dart</span><span class="tag">Flutter</span></div>
+          <div class="repo">github.com/AfnanAnikk/Pet-Town-SE-Lab-Spring-26-</div>
+          <a class="repo-link" href="https://github.com/AfnanAnikk/Pet-Town-SE-Lab-Spring-26-" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-icon" style="background:linear-gradient(135deg,#00B58A,#34D3A6);">GC</div>
+            <h3>Guardian Collar</h3>
+          </div>
+          <p>A companion mobile application for a smart pet collar — pairing hardware with a simple, glanceable mobile UI.</p>
+          <div class="tags"><span class="tag">Dart</span><span class="tag">Flutter</span></div>
+          <div class="repo">github.com/AfnanAnikk/Guardian-Collar</div>
+          <a class="repo-link" href="https://github.com/AfnanAnikk/Guardian-Collar" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-icon" style="background:linear-gradient(135deg,#F59E0B,#FBBF24);">BS</div>
+            <h3>BattleSquares</h3>
+          </div>
+          <p>A trading card game (TCG) built as a course project for Advanced Object-Oriented Programming.</p>
+          <div class="tags"><span class="tag">Java</span></div>
+          <div class="repo">github.com/AfnanAnikk/BattleSquares</div>
+          <a class="repo-link" href="https://github.com/AfnanAnikk/BattleSquares" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-icon" style="background:linear-gradient(135deg,#7C5CFF,#A78BFA);">UX</div>
+            <h3>Pet Town UI/UX Design</h3>
+          </div>
+          <p>Complete UI/UX design for the PetTown platform in Figma, built for a Systems Analysis & Design lab project.</p>
+          <div class="tags"><span class="tag">Figma</span></div>
+          <div class="repo">github.com/AfnanAnikk/Pet-Town-UI-UX-Design</div>
+          <a class="repo-link" href="https://github.com/AfnanAnikk/Pet-Town-UI-UX-Design" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-icon" style="background:linear-gradient(135deg,#EF4444,#FB7185);">LC</div>
+            <h3>Last Card Web App</h3>
+          </div>
+          <p>A web-based rendition of the classic UNO card game.</p>
+          <div class="tags"><span class="tag">TypeScript</span></div>
+          <div class="repo">github.com/AfnanAnikk/Last-Card-game</div>
+          <a class="repo-link" href="https://github.com/AfnanAnikk/Last-Card-game" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-icon" style="background:linear-gradient(135deg,#0EA5E9,#38BDF8);">LM</div>
+            <h3>Last Card Mobile App</h3>
+          </div>
+          <p>Mobile application version of the UNO-inspired Last Card game.</p>
+          <div class="tags"><span class="tag">Dart</span><span class="tag">Flutter</span></div>
+          <div class="repo">github.com/AfnanAnikk/Last-Card-Mobile-App</div>
+          <a class="repo-link" href="https://github.com/AfnanAnikk/Last-Card-Mobile-App" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head"><span class="num">03</span><h2>Skills</h2></div>
+
+      <div class="skill-group">
+        <div class="label">Programming</div>
+        <div class="skill-pills">
+          <span class="pill">Python</span><span class="pill">Dart</span><span class="pill">Java</span>
+          <span class="pill">C++</span><span class="pill">C#</span><span class="pill">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">Frameworks & Tools</div>
+        <div class="skill-pills">
+          <span class="pill">Flutter</span><span class="pill">TensorFlow</span><span class="pill">Node.js</span>
+          <span class="pill">MySQL</span><span class="pill">Figma</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">DevOps & Systems</div>
+        <div class="skill-pills">
+          <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Linux</span><span class="pill">Ubuntu</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="section-head"><span class="num">04</span><h2>Achievements</h2></div>
+      <div class="ach">
+        <span class="t">4th Runner-Up, CSE Project Show Spring 2026 — Microprocessors & Microcontrollers Lab</span>
+        <span class="y">2026</span>
+      </div>
+    </section>
+
+    <footer>
+      <a class="cta" href="#" id="cvLinkFooter">&#8595; Download full CV (PDF)</a>
+      <div class="fine">Built with Flutter energy, deployed as plain HTML. Last updated August 2026.</div>
+    </footer>
+  </div>
+
+<script>
+  // mobile nav toggle
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('navList').classList.toggle('open');
+  });
+  document.querySelectorAll('#navList a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('navList').classList.remove('open'); });
+  });
+
+  // simple live clock in the status bar (local time, Dhaka-styled label only)
+  function tick(){
+    var d = new Date();
+    var hh = String(d.getHours()).padStart(2,'0');
+    var mm = String(d.getMinutes()).padStart(2,'0');
+    document.getElementById('clock').textContent = hh + ':' + mm;
+  }
+  tick(); setInterval(tick, 1000*15);
+
+  // point CV links at the PDF placed alongside this file
+  document.getElementById('cvLink').href = 'CV_Juboraz_Afnan_Mehmud.pdf';
+  document.getElementById('cvLinkFooter').href = 'CV_Juboraz_Afnan_Mehmud.pdf';
+</script>
+
+</body>
+</html>
