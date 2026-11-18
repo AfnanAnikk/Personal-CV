@@ -58,6 +58,7 @@
     transition:border-color .15s, transform .15s;
   }
   .social:hover{border-color:var(--accent); transform:translateY(-2px);}
+  .social svg{width:16px; height:16px;}
   .cv-btn{
     display:block; margin-top:20px; background:var(--accent); color:#0B0E14;
     text-decoration:none; font-weight:600; font-size:14px; padding:12px 0;
@@ -111,7 +112,8 @@
     font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--ink);
     background:rgba(255,255,255,0.05); border:1px solid var(--line); padding:3px 8px; border-radius:6px;
   }
-  .proj a.link{font-size:12px; font-weight:600; color:var(--accent); text-decoration:none; margin-top:2px;}
+  .proj-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:2px;}
+  .proj a.link{font-size:12px; font-weight:600; color:var(--accent); text-decoration:none;}
   .proj a.link:hover{text-decoration:underline;}
 
   .skill-group{margin-bottom:16px;}
@@ -179,6 +181,7 @@
           </a>
         </div>
         <a class="cv-btn" href="CV_Juboraz_Afnan_Mehmud.pdf">&#8595; Download CV</a>
+      </div>
     </aside>
 
     <main class="content">
@@ -186,13 +189,171 @@
       <div class="card">
         <h2>About Me</h2>
         <div class="rule"></div>
-        <p>I'm pursuing a B.Sc. in Computer Science & Engineering at United International University (UIU), Bangladesh. I enjoy building software that solves real world problems, with interests spanning mobile application development, artificial intelligence, user experience, and game development.</p>
-        <p>Outside of coursework, I spend most of my time in Flutter and Dart. I'm currently expanding my skills in Unity while continuing to build mobile applications and exploring AI powered solutions.</p>
+        <p>I'm pursuing a B.Sc. in Computer Science &amp; Engineering at United International University (UIU), Bangladesh. I enjoy building software that solves real-world problems, with interests spanning mobile application development, artificial intelligence, user experience, and game development.</p>
+        <p>Outside of coursework, I spend most of my time in Flutter and Dart. I'm currently expanding my skills in Unity while continuing to build mobile applications and exploring AI-powered solutions.</p>
         <div class="interests">
           <span class="tag-pill">Mobile Development</span>
-          <span class="tag-pill">AI & Machine Learning</span>
+          <span class="tag-pill">AI &amp; Machine Learning</span>
           <span class="tag-pill">Game Development</span>
           <span class="tag-pill">UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Notable Projects</h2>
+        <div class="rule"></div>
+        <div class="grid">
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#6E8CFF;">PT</div>
+              <h3>PetTown</h3>
+            </div>
+            <p>An all-in-one mobile platform made with Flutter for pet owners to connect with other pet lovers, share moments, discover pet services like vets, salons, adoption, and marketplaces, and build a community, complete with a dedicated controller admin panel.</p>
+            <div class="proj-tags"><span class="proj-tag">Dart</span><span class="proj-tag">Flutter</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/Pet-Town</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/Pet-Town" target="_blank" rel="noopener">View repo &rarr;</a>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#B08CFF;">UX</div>
+              <h3>Pet Town UI/UX Design</h3>
+            </div>
+            <p>Hand-designed the complete UI/UX for the PetTown platform in Figma as part of a SAD lab project.</p>
+            <div class="proj-tags"><span class="proj-tag">Figma</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/Pet-Town-UI-UX-Design</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/Pet-Town-UI-UX-Design" target="_blank" rel="noopener">View repo &rarr;</a>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#9B8CFF;">OM</div>
+              <h3>Omni &amp; Omni Windows</h3>
+            </div>
+            <p>An invisible desktop AI assistant powered by Gemini built on Python, talks only when prompted with a key, and gives answers based on what it sees on screen, and what my requests are. Built primarily for macOS and Windows.</p>
+            <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Gemini</span><span class="proj-tag">macOS</span><span class="proj-tag">Windows</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/Omni</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/Omni" target="_blank" rel="noopener">macOS repo &rarr;</a>
+              <a class="link" href="https://github.com/AfnanAnikk/Omni-Windows" target="_blank" rel="noopener">Windows repo &rarr;</a>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#39D8AA;">GC</div>
+              <h3>Guardian Collar</h3>
+            </div>
+            <p>A companion mobile application built with Flutter for the smart pet collar I made for Microprocessors &amp; Microcontrollers Lab.</p>
+            <div class="proj-tags"><span class="proj-tag">Dart</span><span class="proj-tag">Flutter</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/Guardian-Collar</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/Guardian-Collar" target="_blank" rel="noopener">View repo &rarr;</a>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#F2777A;">LC</div>
+              <h3>Last Card Web App</h3>
+            </div>
+            <p>A web-based rendition of the classic UNO card game I made on TypeScript.</p>
+            <div class="proj-tags"><span class="proj-tag">TypeScript</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/Last-Card-game</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/Last-Card-game" target="_blank" rel="noopener">View repo &rarr;</a>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#4FC3F7;">LM</div>
+              <h3>Last Card Mobile App</h3>
+            </div>
+            <p>A Flutter-based cross-platform rendition of the UNO-inspired Last Card game.</p>
+            <div class="proj-tags"><span class="proj-tag">Dart</span><span class="proj-tag">Flutter</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/Last-Card-Mobile-App</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/Last-Card-Mobile-App" target="_blank" rel="noopener">View repo &rarr;</a>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <div class="proj-icon" style="background:#F5B342;">BS</div>
+              <h3>BattleSquares</h3>
+            </div>
+            <p>My first project - a trading card game developed in JavaFX for AOOP course.</p>
+            <div class="proj-tags"><span class="proj-tag">Java</span><span class="proj-tag">JavaFX</span></div>
+            <div class="repo">https://github.com/AfnanAnikk/BattleSquares</div>
+            <div class="proj-links">
+              <a class="link" href="https://github.com/AfnanAnikk/BattleSquares" target="_blank" rel="noopener">View repo &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Achievements</h2>
+        <div class="rule"></div>
+        <div class="ach">
+          <span class="t">4th Runner-Up, CSE Project Show Spring 2026 (Microprocessors &amp; Microcontrollers Lab)</span>
+          <span class="y">2026</span>
+        </div>
+        <div class="ach">
+          <span class="t">Finalist | BUP Hackathon 2026</span>
+          <span class="y">2026</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Experience</h2>
+        <div class="rule"></div>
+        <div class="edu-row">
+          <div>
+            <h3>Creative Writer | Upwork</h3>
+            <div class="school">Worked with multiple international clients, building long-term client relationships.</div>
+          </div>
+          <div class="badge">Freelance</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Skills</h2>
+        <div class="rule"></div>
+        <div class="skill-group">
+          <div class="skill-label">Programming</div>
+          <div class="pills">
+            <span class="pill">Python</span><span class="pill">Dart</span><span class="pill">Java</span>
+            <span class="pill">C++</span><span class="pill">C#</span><span class="pill">JavaScript</span>
+            <span class="pill">HTML</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Frameworks &amp; Tools</div>
+          <div class="pills">
+            <span class="pill">Flutter</span><span class="pill">TensorFlow</span><span class="pill">Node.js</span>
+            <span class="pill">PostgreSQL</span><span class="pill">Figma</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">DevOps &amp; Systems</div>
+          <div class="pills">
+            <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Linux</span><span class="pill">Ubuntu</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Soft Skills</div>
+          <div class="pills">
+            <span class="pill">Communication</span><span class="pill">Creative Writing</span>
+            <span class="pill">Team Collaboration</span><span class="pill">UI/UX Design</span>
+          </div>
         </div>
       </div>
 
@@ -208,119 +369,7 @@
         </div>
       </div>
 
-      <div class="card">
-        <h2>Notable Projects</h2>
-        <div class="rule"></div>
-        <div class="grid">
-
-          <div class="proj">
-            <div class="proj-top">
-              <div class="proj-icon" style="background:#6E8CFF;">PT</div>
-              <h3>PetTown</h3>
-            </div>
-            <p>An all-in-one mobile platform for pet owners to connect, share moments, discover pet-friendly services, and build community.</p>
-            <div class="proj-tags"><span class="proj-tag">Dart</span><span class="proj-tag">Flutter</span></div>
-            <div class="repo">https://github.com/AfnanAnikk/Pet-Town</div>
-            <a class="link" href="https://github.com/AfnanAnikk/Pet-Town-SE-Lab-Spring-26-" target="_blank" rel="noopener">View repo &rarr;</a>
-          </div>
-
-          <div class="proj">
-            <div class="proj-top">
-              <div class="proj-icon" style="background:#39D8AA;">GC</div>
-              <h3>Guardian Collar</h3>
-            </div>
-            <p>A companion mobile application for a smart pet collar, pairing hardware with a simple, glanceable mobile UI.</p>
-            <div class="proj-tags"><span class="proj-tag">Dart</span><span class="proj-tag">Flutter</span></div>
-            <div class="repo">https://github.com/AfnanAnikk/Guardian-Collar</div>
-            <a class="link" href="https://github.com/AfnanAnikk/Guardian-Collar" target="_blank" rel="noopener">View repo &rarr;</a>
-          </div>
-
-          <div class="proj">
-            <div class="proj-top">
-              <div class="proj-icon" style="background:#F5B342;">BS</div>
-              <h3>BattleSquares</h3>
-            </div>
-            <p>A trading card game (TCG) built as a course project for Advanced Object-Oriented Programming.</p>
-            <div class="proj-tags"><span class="proj-tag">Java</span></div>
-            <div class="repo">https://github.com/AfnanAnikk/BattleSquares</div>
-            <a class="link" href="https://github.com/AfnanAnikk/BattleSquares" target="_blank" rel="noopener">View repo &rarr;</a>
-          </div>
-
-          <div class="proj">
-            <div class="proj-top">
-              <div class="proj-icon" style="background:#B08CFF;">UX</div>
-              <h3>Pet Town UI/UX Design</h3>
-            </div>
-            <p>Complete UI/UX design for the PetTown platform in Figma, built for a Systems Analysis & Design lab project.</p>
-            <div class="proj-tags"><span class="proj-tag">Figma</span></div>
-            <div class="repo">https://github.com/AfnanAnikk/Pet-Town-UI-UX-Design</div>
-            <a class="link" href="https://github.com/AfnanAnikk/Pet-Town-UI-UX-Design" target="_blank" rel="noopener">View repo &rarr;</a>
-          </div>
-
-          <div class="proj">
-            <div class="proj-top">
-              <div class="proj-icon" style="background:#F2777A;">LC</div>
-              <h3>Last Card Web App</h3>
-            </div>
-            <p>A web-based rendition of the classic UNO card game.</p>
-            <div class="proj-tags"><span class="proj-tag">TypeScript</span></div>
-            <div class="repo">https://github.com/AfnanAnikk/Last-Card-game</div>
-            <a class="link" href="https://github.com/AfnanAnikk/Last-Card-game" target="_blank" rel="noopener">View repo &rarr;</a>
-          </div>
-
-          <div class="proj">
-            <div class="proj-top">
-              <div class="proj-icon" style="background:#4FC3F7;">LM</div>
-              <h3>Last Card Mobile App</h3>
-            </div>
-            <p>Mobile application version of the UNO-inspired Last Card game.</p>
-            <div class="proj-tags"><span class="proj-tag">Dart</span><span class="proj-tag">Flutter</span></div>
-            <div class="repo">https://github.com/AfnanAnikk/Last-Card-Mobile-App</div>
-            <a class="link" href="https://github.com/AfnanAnikk/Last-Card-Mobile-App" target="_blank" rel="noopener">View repo &rarr;</a>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Skills</h2>
-        <div class="rule"></div>
-        <div class="skill-group">
-          <div class="skill-label">Programming</div>
-          <div class="pills">
-            <span class="pill">Python</span><span class="pill">Dart</span><span class="pill">Java</span>
-            <span class="pill">C++</span><span class="pill">C#</span><span class="pill">JavaScript</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">Frameworks & Tools</div>
-          <div class="pills">
-            <span class="pill">Flutter</span><span class="pill">TensorFlow</span><span class="pill">Node.js</span>
-            <span class="pill">MySQL</span><span class="pill">Figma</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">DevOps & Systems</div>
-          <div class="pills">
-            <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Linux</span><span class="pill">Ubuntu</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Achievements</h2>
-        <div class="rule"></div>
-        <div class="ach">
-          <span class="t">4th Runner-Up, CSE Project Show Spring 2026 (Microprocessors & Microcontrollers Lab)</span>
-          <span class="y">2026</span>
-        </div>
-        <div class="ach">
-          <span class="t">Finalist | BUP Hackathon 2026</span>
-          <span class="y">2026</span>
-        </div>
-      </div>
-
-      <footer>Last updated Oct 1, 2026.</footer>
+      <footer>Last updated Nov 18, 2026.</footer>
 
     </main>
   </div>
